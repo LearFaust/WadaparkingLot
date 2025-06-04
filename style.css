@@ -251,3 +251,7 @@ footer {
     text-align: center;
   }
 }
+.hamburger {
+  position: relative;
+  z-index: 1100;
+}
