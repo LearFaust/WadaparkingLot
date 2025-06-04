@@ -10,6 +10,7 @@
   <header>
     <nav class="navbar">
       <div class="logo">PORTFOLIO</div>
+      <div class="hamburger">&#9776;</div>
       <ul class="nav-links">
         <li><a href="#about-section" class="nav-link active">Home</a></li>
         <li><a href="#projects-section" class="nav-link">Projects</a></li>
@@ -53,7 +54,40 @@
   <footer>
     <p>© Jiere L. Blancaflor</p>
   </footer>
+
+  <script>
+    // Hamburger toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+
+    // Optional: Smooth section switching
+    const links = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('.content-section');
+
+    links.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+
+        // Remove active from all
+        links.forEach(l => l.classList.remove('active'));
+        sections.forEach(s => s.classList.remove('active'));
+
+        // Add active to selected
+        link.classList.add('active');
+        const target = document.querySelector(link.getAttribute('href'));
+        target.classList.add('active');
+
+        // Close menu on mobile
+        navLinks.classList.remove('show');
+      });
+    });
+  </script>
 </body>
 </html>
+
 
 
