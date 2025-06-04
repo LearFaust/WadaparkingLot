@@ -60,17 +60,34 @@ header {
   border-bottom: 2px solid #DC143C;
 }
 
-/* Hamburger */
+/* Desktop: show nav-links, hide hamburger */
 .hamburger {
   display: none;
-  font-size: 1.8rem;
-  color: #DC143C;
   cursor: pointer;
+  color: #DC143C;
+  font-size: 1.8rem;
 }
 
+/* Mobile styles */
 @media (max-width: 768px) {
+  .nav-links {
+    display: none; /* hide nav links by default */
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    background-color: #111;
+    padding: 1rem 0;
+    gap: 1rem;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
   .hamburger {
-    display: block;
+    display: block; /* show hamburger on mobile */
   }
 }
 
