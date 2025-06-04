@@ -68,6 +68,12 @@ header {
   cursor: pointer;
 }
 
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+}
+
 /* Split Screen Layout */
 .split-screen {
   display: flex;
