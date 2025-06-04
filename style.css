@@ -12,6 +12,10 @@ body {
   line-height: 1.6;
 }
 
+a {
+  color: inherit;
+}
+
 /* Navbar Styles */
 header {
   background-color: #111;
@@ -26,6 +30,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
 .logo {
@@ -36,8 +41,6 @@ header {
 
 .nav-links {
   list-style: none;
-  padding: 0;
-  margin: 0;
   display: flex;
   gap: 1rem;
 }
@@ -55,6 +58,14 @@ header {
 .nav-links a.active {
   color: #DC143C;
   border-bottom: 2px solid #DC143C;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  color: #DC143C;
+  cursor: pointer;
 }
 
 /* Split Screen Layout */
@@ -119,7 +130,6 @@ header {
   font-size: 1.2rem;
 }
 
-/* Hidden/Visible Section Control */
 .content-section {
   display: none;
   animation: fadeIn 0.5s ease;
@@ -170,7 +180,7 @@ footer {
   color: #fff;
 }
 
-/* Responsive for Mobile */
+/* Responsive Styles */
 @media (max-width: 768px) {
   .split-screen {
     flex-direction: column;
@@ -187,7 +197,6 @@ footer {
 
   .left-side {
     order: -1;
-    background-color: #111;
   }
 
   .profile-pic {
@@ -195,29 +204,27 @@ footer {
     height: 150px;
   }
 
+  .hamburger {
+    display: block;
+  }
+
   .nav-links {
-    flex-direction: column;
-    background: #111;
     position: absolute;
-    top: 70px;
+    top: 60px;
     right: 0;
-    padding: 1rem;
-    display: none;
+    flex-direction: column;
+    background-color: #111;
     width: 100%;
+    display: none;
+    padding: 1rem 0;
+    gap: 1rem;
   }
 
   .nav-links.show {
     display: flex;
   }
 
-  .hamburger {
-    display: block;
-    cursor: pointer;
-    color: #DC143C;
-    font-size: 1.5rem;
-  }
-
-  .navbar {
-    position: relative;
+  .nav-links li {
+    text-align: center;
   }
 }
